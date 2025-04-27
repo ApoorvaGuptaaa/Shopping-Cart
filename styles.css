@@ -1,11 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  background: #f9f9f9;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2 {
   text-align: center;
+  color: #333;
+  margin-top: 20px;
 }
 
 #products, #cart {
@@ -13,28 +16,41 @@ h1, h2 {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 20px;
 }
 
 .product, .cart-item {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 15px;
-  width: 200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 220px;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product:hover, .cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 button {
-  margin-top: 10px;
-  padding: 8px 12px;
   background-color: #3498db;
   color: white;
   border: none;
   border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 10px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
 }
 
 button:hover {
   background-color: #2980b9;
+}
+
+p {
+  margin: 10px 0;
+  color: #555;
 }
