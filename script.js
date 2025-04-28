@@ -4,8 +4,8 @@ function fetchProducts() {
     setTimeout(() => {
       resolve([
         { id: 1, name: "Apple", price: 1 },
-        { id: 2, name: "Banana", price: 0.5 },
-        { id: 3, name: "Orange", price: 0.8 },
+        { id: 2, name: "Banana", price: 5 },
+        { id: 3, name: "Orange", price: 8 },
         { id: 4, name: "Mango", price: 1.5 },
       ]);
     }, 500);
@@ -21,7 +21,7 @@ function displayProducts(products) {
     div.className = 'product';
     div.innerHTML = `
       <h3>${product.name}</h3>
-      <p>Price: $${product.price.toFixed(2)}</p>
+      <p>Price: ₹${product.price.toFixed(2)}</p>
       <button onclick="addToCart(${product.id})">Add to Cart</button>
     `;
     productsDiv.appendChild(div);
@@ -51,7 +51,7 @@ function renderCart() {
     div.innerHTML = `
       <h4>${item.name}</h4>
       <p>Quantity: ${item.quantity}</p>
-      <p>Total: $${(item.price * item.quantity).toFixed(2)}</p>
+      <p>Total: ₹${(item.price * item.quantity).toFixed(2)}</p>
       <button onclick="removeFromCart(${item.id})">Remove</button>
     `;
     cartDiv.appendChild(div);
